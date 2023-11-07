@@ -1,6 +1,6 @@
 package mate.academy.heroesapi.controller;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import mate.academy.heroesapi.dto.HeroRequestDto;
 import mate.academy.heroesapi.dto.HeroResponseDto;
@@ -29,13 +29,7 @@ public class HeroController {
         if (name != null) {
             return heroService.findByNamePart(name);
         }
-        List<HeroResponseDto> responseDtos = new ArrayList<>();
-        responseDtos.add(new HeroResponseDto());
-        responseDtos.add(new HeroResponseDto());
-        responseDtos.add(new HeroResponseDto());
-        responseDtos.add(new HeroResponseDto());
-        responseDtos.add(new HeroResponseDto());
-        return responseDtos;
+        return Collections.emptyList();
     }
 
     @GetMapping("/{id}")
